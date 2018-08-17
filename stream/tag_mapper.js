@@ -72,6 +72,17 @@ module.exports = function(){
           }
         }
       }
+      // Map population
+      if (tags.hasOwnProperty('population')) {
+        try {
+          var population = parseInt(tags.population, 10);
+          if (population) {
+            doc.setPopulation(population);
+          }
+        } catch (err) {
+        }
+      }
+
     }
 
     catch( e ){
